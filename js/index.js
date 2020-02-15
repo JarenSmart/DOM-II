@@ -1,5 +1,4 @@
 const logo = document.querySelector(".logo-heading");
-const navCon = document.querySelector(".container nav-container");
 
 //mouseover event
 logo.addEventListener("mouseover", () => {
@@ -13,8 +12,9 @@ logo.addEventListener("mouseleave", () => {
 });
 
 //keydown event (B - 66)
-navCon.addEventListener("keydown", function(e) {
-  if (event.keyCode == 66) {
-    navCon.style.background = "#FFEBCE";
+window.addEventListener("keydown", windowAlert, false);
+function windowAlert(e) {
+  if (e.keyCode == 66) {
+    alert("Woah! Where are you going?");
   }
-});
+}
