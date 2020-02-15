@@ -1,4 +1,5 @@
 const logo = document.querySelector(".logo-heading");
+const byeBus = document.querySelector(".top-bus");
 
 //mouseover event
 logo.addEventListener("mouseover", () => {
@@ -18,3 +19,13 @@ function windowAlert(e) {
     alert("Woah! Where are you going?");
   }
 }
+
+//wheel event
+function drive(event) {
+  event.preventDefault();
+  scale += event.deltaY * 0.01;
+  scale = Math.min(Math.max(0.125, scale), 3);
+  byeBus.style.transform = `scale(${scale})`;
+}
+let scale = 1;
+byeBus.addEventListener("wheel", drive);
