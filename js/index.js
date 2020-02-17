@@ -1,15 +1,18 @@
 const logo = document.querySelector(".logo-heading");
 const byeBus = document.querySelector(".top-bus");
+const dblContent = document.querySelectorAll("p");
 
 //mouseover event
 logo.addEventListener("mouseover", () => {
   logo.style.transform = "scale(1.3)";
   logo.style.transition = "all 0.4s";
   logo.style.cursor = "pointer";
+  logo.style.color = "#B0D1DD";
 });
 
 logo.addEventListener("mouseleave", () => {
   logo.style.transform = "scale(1)";
+  logo.style.color = "black";
 });
 
 //keydown event (B - 66)
@@ -29,3 +32,19 @@ function drive(event) {
 }
 let scale = 1;
 byeBus.addEventListener("wheel", drive);
+
+//drag-drop event
+// function dragText(event) {
+//     document.addEventListener("drag", function(event))
+// }
+
+//dblclick event
+dblContent.forEach(sect => {
+  sect.addEventListener("dblclick", () => {
+    if (sect.style.backgroundColor === "#FFEACD") {
+      sect.style.backgroundColor = "#16A2B8";
+    } else {
+      sect.style.backgroundColor = "#FFEACD";
+    }
+  });
+});
