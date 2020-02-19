@@ -38,6 +38,17 @@ byeBus.addEventListener("wheel", drive);
 //     document.addEventListener("drag", function(event))
 // }
 
+//resize event
+function windowSize() {
+  let w = document.documentElement.clientWidth;
+  let h = document.documentElement.clientHeight;
+  document.getElementsByClassName("img-content").innerHTML =
+    "Width: " + w + ", " + "Height: " + h;
+}
+
+window.addEventListener("img-content", windowSize);
+windowSize();
+
 //dblclick event
 dblContent.forEach(sect => {
   sect.addEventListener("dblclick", () => {
