@@ -42,12 +42,13 @@ byeBus.addEventListener("wheel", drive);
 function windowSize() {
   let w = document.documentElement.clientWidth;
   let h = document.documentElement.clientHeight;
-  document.getElementsByClassName("img-content").innerHTML =
+  document.getElementsByClassName(".content-section .text-content").innerHTML =
     "Width: " + w + ", " + "Height: " + h;
 }
 
-window.addEventListener("img-content", windowSize);
-windowSize();
+window.addEventListener("resize", () => {
+  console.log("resize initiated");
+});
 
 //dblclick event
 dblContent.forEach(sect => {
@@ -57,5 +58,12 @@ dblContent.forEach(sect => {
     } else {
       sect.style.backgroundColor = "#FFEACD";
     }
+  });
+});
+
+//preventDefault event
+document.querySelectorAll(".nav-link").forEach(el => {
+  el.addEventListener("click", e => {
+    e.preventDefault();
   });
 });
